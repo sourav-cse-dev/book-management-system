@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BookModel } from '../models/book.model.ts';
 
 @Component({
@@ -7,11 +7,15 @@ import { BookModel } from '../models/book.model.ts';
   templateUrl: './book.component.html',
   styleUrl: './book.component.scss'
 })
-export class BookComponent {
+export class BookComponent implements OnInit {
   bookTitle: string = '';
   bookAuthor: string = '';
-
   books: BookModel[] = [];
+
+  ngOnInit(): void {
+    let savedBooks = localStorage.getItem('books');
+    this.books = savedBooks ? JSON.parse(savedBooks) : [];
+  }
 
   addBook(): void {
     alert('You have added' + ' ' + this.bookTitle + ' ' + this.bookAuthor);
