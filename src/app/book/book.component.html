@@ -19,7 +19,11 @@
     <h2 class="text-center">Book Lists</h2>
     <ul class="list-group mt-3">
       @for(book of books; track $index){
-      <li class="list-group-item d-flex justify-content-between align-items-center">{{ book.title }} by {{ book.author }}</li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        {{ book.title }} by {{ book.author }}
+        <button class="btn btn-danger" (click)="deleteBook($index)">Delete</button>
+      </li>
+
       }
     </ul>
   </div>

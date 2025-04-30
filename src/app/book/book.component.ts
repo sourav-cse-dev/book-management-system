@@ -26,4 +26,8 @@ export class BookComponent {
       this.bookAuthor = '';
     }
   }
+
+  deleteBook(index: number): void {
+    this.books.splice(index, 1);
+  }
 }
