@@ -24,10 +24,13 @@ export class BookComponent {
       this.books.push(newBook);
       this.bookTitle = '';
       this.bookAuthor = '';
+
+      localStorage.setItem('books', JSON.stringify(this.books));
     }
   }
 
   deleteBook(index: number): void {
     this.books.splice(index, 1);
+    localStorage.setItem('books', JSON.stringify(this.books));
   }
 }
