@@ -24,7 +24,6 @@ export class BookComponent {
       this.books.push(newBook);
       this.bookTitle = '';
       this.bookAuthor = '';
-      alert(this.books.length + ' ' + 'books have been added');
     }
   }
 }
